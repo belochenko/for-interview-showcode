@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  db:
+    container_name: onu-tg-bot-database
+    image: postgres
+    environment:
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_DB=${DATABASE_NAME}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+    ports:
+      - "5430:5432"
+  web:
+    build: .
+    env_file:
+      .env
+    command: python app.py
+    volumes:
+      - .:/tg-bot
+    depends_on:
+      - db

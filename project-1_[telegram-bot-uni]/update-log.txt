@@ -1,0 +1,2 @@
+- 30.01.2021 - Added "Add to editor & Add to group lead" choices on admin panel, Reformatted majors button, remaded setup_commands.py and added commands.json, added "send without approval" button to admins
+- 31.01.2021 - Removed command '/new_ad', remaded it to button, made query requests to db more secure
